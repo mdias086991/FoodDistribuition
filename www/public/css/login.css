@@ -1,0 +1,106 @@
+.login-section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    display: none;
+}
+
+.card-login {
+    display: flex;
+    justify-content: center;
+    height: 40rem;
+    width: 32rem;
+    background: var(--color-background-secondary);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+.login-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-header h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-font-secondary);
+}
+
+.label  {
+    color: var(--color-font-secondary);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.label input {
+    width: 25rem;
+    height: 4rem;
+    background: var(--color-background-secondary);
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+
+@media (min-width: 1270px) {
+    .login-section {
+        justify-content: flex-end;
+    }
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        background: var(--color-background-primary);
+    }
+    .image img {
+        width: 70rem;
+    }
+    .image p {
+        position: absolute;
+        top: 1rem;
+        left: 125rem;
+    }
+
+    .card-login {
+        margin-right: 17rem;
+    }
+
+    .links > p {
+        color: var(--color-font-primary);
+        padding: 0 25px;
+        font-size: 13px;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+   
+}
+
