@@ -12,9 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/create-client', 'ClientController@create')->name('create');
+Route::post('/store-client', 'ClientController@store')->name('store');
+Route::get('/client', 'ClientController@show')->name('edit');
+
+
+Auth::routes();
+
