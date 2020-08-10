@@ -3,10 +3,10 @@ $(document).ready(function() {
         language: {
             "sSearch": "Buscar: ",
             "lengthMenu": "Mostrar _MENU_ resultados por página",
-            "zeroRecords": "Nothing found - sorry",
+            "zeroRecords": "Nenhum resultado encontrado",
             "info": "Página _PAGE_ de _PAGES_",
             "sZeroRecords": "Não foram encontrados resultados",
-            "infoEmpty": "Nenhum resultado disponivel",
+            "infoEmpty": "Nenhum resultado disponível",
             "infoFiltered": "(filtered from _MAX_ total records)",
             "oPaginate" : {
                 "sFirst": "Primeiro",
@@ -18,7 +18,6 @@ $(document).ready(function() {
         },
         "scrollY":        "270px",
         "scrollCollapse": true,
-        "scrollX": true
        
     } );
 } );

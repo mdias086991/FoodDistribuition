@@ -18,9 +18,17 @@
     height: 40rem;
     width: 32rem;
     background: var(--color-background-secondary);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px  0px 5px 1px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
 }
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .login-header {
     display: flex;
     justify-content: center;
@@ -29,12 +37,13 @@
 .login-header h3 {
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 33px;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--color-font-secondary);
+    margin-bottom: 50px;
 }
 
 .label  {
@@ -45,9 +54,13 @@
     line-height: 17px;
 }
 
+.label label {
+    margin-bottom: 0;
+}
+
 .label input {
     width: 25rem;
-    height: 4rem;
+    height: 3rem;
     background: var(--color-background-secondary);
     border: 1px solid #DDDDDD;
     box-sizing: border-box;
@@ -62,6 +75,17 @@
     justify-content: center;
     margin-top: 6rem;
 }
+
+.login-button button {
+    width: 150px;
+    height: 50px;
+}
+
+.card-footer {
+    background-color: transparent !important;
+    padding-top: 36px;
+}
+
 
 
 @media (min-width: 1270px) {
@@ -79,13 +103,12 @@
         overflow: hidden;
         background: var(--color-background-primary);
     }
-    .image img {
-        width: 70rem;
-    }
     .image p {
         position: absolute;
         top: 1rem;
-        left: 125rem;
+        left: 88rem;
+        font-family: 'Comfortaa', cursive;
+        font-size: 18px;
     }
 
     .card-login {

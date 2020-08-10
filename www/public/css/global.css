@@ -10,37 +10,40 @@
     --color-button-danger-primary: #9F0006;
     --color-button-info-primary: #2AB7CA;
 
-    font-size: 60%;
-
 }
+
+body, html {
+    font-family: 'Comfortaa', cursive;
+}
+
 ul li {
     list-style: none;
 }
 a{
     text-decoration: none;
 }
-.btn {
-    padding: 8px 20px;
+.button {
+    padding: 8px 20px !important;
     border-radius: 2px;
     cursor: pointer;
 }
-.btn-primary {
-    background-color: var(--color-button-danger-primary);
+.button-primary {
+    background-color: var(--color-button-danger-primary) !important;
+    color: var(--color-font-primary) !important;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+}
+.button-info {
+    background-color:  var(--color-button-info-primary);
     color: var(--color-font-primary);
     font-weight: bold;
     font-family: 'Comfortaa', cursive;
 }
-.btn-info {
-    background-color:  var(--color-button-info-primary);
-}
-.btn-warning {
+.button-warning {
     background-color:  var(--color-button-warning-primary);
-}
-html,
-body{
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+    color: var(--color-font-secondary);
+    font-weight: bold;
     font-family: 'Comfortaa', cursive;
 }
+
 

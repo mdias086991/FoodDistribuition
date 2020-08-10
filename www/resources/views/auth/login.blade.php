@@ -50,7 +50,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="login-button">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-danger">
                             {{ __('Entrar') }}
                         </button>
                     </div>

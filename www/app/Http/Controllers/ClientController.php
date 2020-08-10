@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use App\Address;
 
 class ClientController extends Controller
 {
@@ -35,7 +36,28 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        
+        $client = Client::create($data);
+
+        
+        if($client) {
+            $addressData = new Address();
+            
+            $addressData->id_client = $client->id;
+            $addressData->cep = $request->cep;
+            $addressData->patio = $request->patio;
+            $addressData->neighborhood = $request->neighborhood;
+            $addressData->complemento = $request->complemento;
+            $addressData->number = $request->number;
+            $addressData->city = $request->city;
+            $addressData->state = $request->state;
+            $addressData->status = $request->status;
+
+            $client->createAddress($addressData);
+            // $addressData->save();
+
+        }
     }
 
     /**
@@ -44,9 +66,12 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show($id)
     {
-        return view('dashboard.clients.edit');
+        $clients = Client::find($id);
+        $addresses = Address::where('id_client', $id)->get();
+        
+        return view('dashboard.clients.edit', compact('clients', 'addresses'));
     }
 
     /**
@@ -67,9 +92,17 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, $id)
     {
-        //
+        $client = Client::findOrFail($id);
+        $client->company_name = $request->company_name;
+        $client->cnpj = $request->cnpj;
+        $client->name_responsible = $request->name_responsible;
+        $client->phone = $request->phone;
+        $client->email = $request->email;
+
+        $client->save();
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +111,16 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy($client)
     {
-        //
+        $clients = Client::findOrFail($client);
+        $addresses = Address::where('id_client', $client)->get(); 
+
+       foreach($addresses as $address) { 
+           $address->delete();
+       }
+        $clients->delete();
+
+        return redirect('/home');
     }
 }
