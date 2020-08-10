@@ -101,7 +101,7 @@
                     html+='<input type="text" class="form-control" id="number"  name="number" placeholder="Número">'
                 html+='</div>'
                 html += '<div class="form-group mx-sm-3 mb-2">'
-                    html+='<input type="text" class="form-control" id="number"  name="status" value="1" style="visibility: hidden">'
+                    html+='<input type="text" class="form-control" id="number"  name="status" value="0" style="visibility: hidden">'
                 html+='</div>'
                 html+='<button type="submit" class="btn btn-success">Salvar</button>'
             html+='</form>'
